@@ -1,0 +1,12 @@
+.sign-up-container {
+  position: relative;
+  top: 0;
+}
+
+form {
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 1fr;
+  width: 50%;
+  height: 50px;
+}
