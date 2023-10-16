@@ -4,11 +4,15 @@ import { ReactComponent as CrownLogo } from "../../Assets/crown.svg"
 import CartIcon from "../../Component/CartIcon/CartIcon"
 import { CurrentUserContext } from "../../Component/Context/User-context"
 import { signOutUser } from "../../Utills/Firebase/Firebase"
+import Cart from "../../Component/Cart/Cart"
+import { CartUseContext } from "../../Component/Context/Cart-context"
 import "./navigation.scss"
 
 
 const Navigation = () => {
+  const { isCartOpen } = CartUseContext()
   const { currentUser } = CurrentUserContext()
+
   const signOutHandler = () => {
     signOutUser()
   }
@@ -31,12 +35,10 @@ const Navigation = () => {
             )}
           <CartIcon />
         </div>
+        {isCartOpen && <Cart />}
       </div>
       <Outlet />
     </Fragment>
-
-
-
   )
 }
 
